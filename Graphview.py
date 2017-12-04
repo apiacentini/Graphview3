@@ -6,8 +6,8 @@ from datetime import datetime
 import os
 
 
-UPLOAD_FOLDER = './static/resources/upload/'  # Save path from server point of view
-SIMPLE_UPLOAD_FOLDER = './resources/upload/'  # Save path from JS point of view
+UPLOAD_FOLDER = os.path.join('static', 'resources') #'./static/resources/upload/'  # Save path from server point of view
+SIMPLE_UPLOAD_FOLDER = 'resources'  # Save path from JS point of view
 ALLOWED_EXTENSIONS = {'txt', 'csv'}  # Allowed extensions for uploaded file
 UPLOAD_FIELD = 'graph'  # Var name for upload.html file
 
