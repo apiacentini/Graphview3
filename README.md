@@ -31,4 +31,4 @@ This should install, using [pip](https://pypi.python.org/pypi/pip), all the [req
 To run the server, type:
  `python3 Graphview3.py`
  
- Open [http:\\127.0.0.1:5000](http:\\127.0.0.1:5000) on your browser and enjoy it ;)
+ Open [http://127.0.0.1:5000/](http://127.0.0.1:5000/) on your browser and enjoy it ;)
