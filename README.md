@@ -26,6 +26,9 @@ To install all the requirements, run the following:
 
 This should install, using [pip](https://pypi.python.org/pypi/pip), all the [requirements](#requirements). 
 
-To install WordNet, run:
+## Run
 
-`python setup.py install`.
+To run the server, type:
+ `python3 Graphview3.py`
+ 
+ Open [http:\\127.0.0.1:5000](http:\\127.0.0.1:5000) on your browser and enjoy it ;)
