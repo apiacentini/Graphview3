@@ -1,0 +1,19 @@
+
+path.link {
+  fill:none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+svg {
+  border: 1px solid black;
+}
+body {
+  display:flex;
+  justify-content: center;
+}
