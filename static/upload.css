@@ -1,0 +1,53 @@
+.upload {
+    position:relative;
+    width:20%;
+    margin: 5% auto;
+    background-color: #323b44;
+
+}
+body {
+    background-color:#2b333b;
+    color: #98a6ad;
+    position:absolute;
+    height:100%;
+    width: 100%;
+}
+.inputfile {
+    z-index:-1;
+    width:0.1px;
+    heigth:0.1px;
+}
+.inputfile + label figure {
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    margin:0 auto;
+}
+figure {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+label {
+    cursor:pointer;
+}
+.form-upload {
+    display:flex;
+    justify-content: center;
+}
+.button {
+    padding:15%;
+    display:flex;
+    justify-content:center;
+}
+.input2 {
+    background-color: #FF7F50;
+    border:none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:200px;
+    color:white;
+
+}
