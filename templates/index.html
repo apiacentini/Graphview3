@@ -5,14 +5,21 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <ul>
+    <table>
+    <tr>
+        <th>Triad Name</th>
+        <th>Count</th>
+    </tr>
     {% for t in tc %}
-        <li>{{ t.k }} {{ t.v }}</li>
+        <tr>
+        <td>{{ t.tn }}</td><td>{{ t.count }}</td>
+        </tr>
     {% endfor %}
-    </ul>
+    </table>
 </body>
 <script src ="http://d3js.org/d3.v3.js"></script>
-<script src="index.js">
-    start({{ name }});
+<script src="index.js"></script>
+<script>
+    start("{{ name }}");
 </script>
 </html>
