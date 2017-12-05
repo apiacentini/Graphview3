@@ -8,11 +8,12 @@ import os
 
 UPLOAD_FOLDER = os.path.join('static', 'resources') #'./static/resources/upload/'  # Save path from server point of view
 SIMPLE_UPLOAD_FOLDER = 'resources/'  # Save path from JS point of view
-ALLOWED_EXTENSIONS = {'txt', 'csv'}  # Allowed extensions for uploaded file
+ALLOWED_EXTENSIONS = {'csv'}  # Allowed extensions for uploaded file
 UPLOAD_FIELD = 'graph'  # Var name for upload.html file
 
 app = Flask(__name__, static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = 'Zupasecret'
 
 
 @app.route('/', methods=['POST', 'GET'])
