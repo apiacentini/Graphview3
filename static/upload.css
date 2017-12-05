@@ -49,5 +49,15 @@ label {
     cursor: pointer;
     width:200px;
     color:white;
-
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+.inputfile + label figure :hover {
+    fill: #FF7F50;
+}
+h3 {
+    font-family: 'Quicksand', sans-serif;
+}
+.input2:hover {
+    color:black;
 }
