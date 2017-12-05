@@ -7,6 +7,24 @@ var start = function(name){
 
         var nodes = {};
 
+        var a = links.reduce(function (acc, curr) {
+
+            Object.values(curr).forEach(function(it){
+
+                if(typeof acc[it] == 'undefined') {
+                    acc[it] = 1;
+                }
+                else {
+                    acc[it] += 1;
+                }
+            })
+                return acc;
+            }, {});
+
+        console.log(a);
+
+
+
         // Compute the distinct nodes from the links.
         links.forEach(function(link) {
             link.source = nodes[link.source] ||
@@ -17,7 +35,10 @@ var start = function(name){
         });
 
         var width = 960,
-            height = 500;
+            height = 500,
+            colors = d3.scale.category10(),
+            count = 10;
+
 
         var force = d3.layout.force()
             .nodes(d3.values(nodes))
@@ -31,6 +52,8 @@ var start = function(name){
         var svg = d3.select("#append").append("svg:svg")
             .attr("width", width)
             .attr("height", height);
+
+
 
         // build the arrow.
         svg.append("svg:defs").selectAll("marker")
@@ -63,7 +86,9 @@ var start = function(name){
 
         // add the nodes
         node.append("circle")
-            .attr("r", 10);
+            .attr("r", function(d) { return d.radius = 10 * (a[d.name]/2)})
+            .style("fill", function(d, i) { return colors(i); });
+
 
         // add the text
         node.append("text")
@@ -77,12 +102,15 @@ var start = function(name){
                 var dx = d.target.x - d.source.x,
                     dy = d.target.y - d.source.y,
                     dr = Math.sqrt(dx * dx + dy * dy);
+                    offsetX = (dx * d.target.radius) / 300;
+                    offsetY = (dy * d.target.radius) / 300;
+
                 return "M" +
                     d.source.x + "," +
                     d.source.y + "A" +
                     dr + "," + dr + " 0 0,1 " +
-                    d.target.x + "," +
-                    d.target.y;
+                    (d.target.x - offsetX) + "," +
+                    (d.target.y - offsetY);
             });
 
             node
@@ -91,4 +119,5 @@ var start = function(name){
         }
 
     });
+
 }
