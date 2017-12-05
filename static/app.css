@@ -13,8 +13,25 @@ circle {
 svg {
   border: 1px solid black;
 }
-body {
+#append {
   display:flex;
   justify-content: center;
-  height:100%;
+}
+.triadi {
+  display: inline-block;
+  border: 1px solid;
+  margin: 8px;
+    width: 200px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.triad-image {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    margin: 50px;
 }

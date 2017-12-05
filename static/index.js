@@ -28,7 +28,7 @@ var start = function(name){
             .on("tick", tick)
             .start();
 
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select("#append").append("svg:svg")
             .attr("width", width)
             .attr("height", height);
 

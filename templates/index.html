@@ -5,20 +5,23 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <table>
-    <tr>
-        <th>Triad Name</th>
-        <th>Count</th>
-        <th>Image</th>
-    </tr>
+    <div id="append">
+    </div>
+
+<div class="container">
     {% for t in tc %}
-        <tr>
-            <td>{{ t.tn }}</td>
-            <td>{{ t.count }}</td>
-            <td><img style="width:50px;" src="/img/{{ t.tn }}.jpg"></img></td>
-        </tr>
+        <div class="triadi">
+    <div class="triad-image">
+        <img style="width:100px; height:100px;" src="/img/{{ t.tn }}.jpg"></img>
+    </div>
+    <div class="info">
+        <h6>{{ t.tn }}</h6><br>
+        <h6>{{ t.count }}</h6>
+    </div>
+        </div>
     {% endfor %}
-    </table>
+</div>
+
 </body>
 <script src ="http://d3js.org/d3.v3.js"></script>
 <script src="index.js"></script>
