@@ -7,7 +7,7 @@ import os
 
 
 UPLOAD_FOLDER = os.path.join('static', 'resources') #'./static/resources/upload/'  # Save path from server point of view
-SIMPLE_UPLOAD_FOLDER = 'resources'  # Save path from JS point of view
+SIMPLE_UPLOAD_FOLDER = 'resources/'  # Save path from JS point of view
 ALLOWED_EXTENSIONS = {'txt', 'csv'}  # Allowed extensions for uploaded file
 UPLOAD_FIELD = 'graph'  # Var name for upload.html file
 
@@ -46,6 +46,15 @@ def index():
     return render_template("upload.html")  # If request.method == GET
 
 
+@app.errorhandler(404)
+def hand404(e):
+    return "<h2>Not found</h2>"
+
+@app.errorhandler(500)
+def hand500(e):
+    return "<h2>Not found</h2>"
+
+
 def get_tc(csv_name):
     """
     The method computes the triad census on the uploaded file.
@@ -67,7 +76,7 @@ def get_tc(csv_name):
                 G.add_node(nodo2)
             G.add_edge(nodo1, nodo2)  # Create the edge based on the two nodes
     final_triad = nx.triadic_census(G)
-    return [{'tn': k, 'count': v} for k, v in final_triad.items()]
+    return sorted([{'tn': k, 'count': v} for k, v in final_triad.items()], key=lambda k: k['tn'])
 
 
 

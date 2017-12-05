@@ -9,10 +9,13 @@
     <tr>
         <th>Triad Name</th>
         <th>Count</th>
+        <th>Image</th>
     </tr>
     {% for t in tc %}
         <tr>
-        <td>{{ t.tn }}</td><td>{{ t.count }}</td>
+            <td>{{ t.tn }}</td>
+            <td>{{ t.count }}</td>
+            <td><img src="{{ t.tn }}.jpg"></img></td>
         </tr>
     {% endfor %}
     </table>
