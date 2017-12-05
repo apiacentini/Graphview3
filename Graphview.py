@@ -44,6 +44,8 @@ def index():
             file.save(full_path)  # Save file
             tc = get_tc(full_path)  # Compute TC
             return render_template("index.html", tc=tc, name=full_path_js)  # Return the HTML page
+        else:
+            render_template(request.url)
     return render_template("upload.html")  # If request.method == GET
 
 
