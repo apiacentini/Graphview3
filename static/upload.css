@@ -5,6 +5,15 @@
     background-color: #323b44;
 
 }
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
     background-color:#2b333b;
     color: #98a6ad;
