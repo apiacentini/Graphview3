@@ -109,8 +109,8 @@ var start = function(name){
                     d.source.x + "," +
                     d.source.y + "A" +
                     dr + "," + dr + " 0 0,1 " +
-                    (d.target.x - offsetX) + "," +
-                    (d.target.y - offsetY);
+                    d.target.x + "," +
+                    d.target.y;
             });
 
             node
